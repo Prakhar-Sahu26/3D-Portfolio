@@ -9,7 +9,7 @@
 
 
 body {
-    background-color: #4b2670;
+    background-color: #271540;
     color: white;
     line-height: 1.6;
 }
@@ -141,7 +141,7 @@ main {
 }
 
 .hero h1 {
-    font-size: 3rem;
+    font-size: 2rem;
     margin-bottom: 15px;
 }
 
@@ -150,7 +150,7 @@ main {
 }
 
 .hero p {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     text-align: center;
     margin: auto;
     margin-bottom: 25px;
