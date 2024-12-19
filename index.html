@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nexura Club</title>
+    <link rel="stylesheet" href="./CSS/home.css" />
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <img
+          src="./public/logoimg.jpg"
+          alt="Nexura Logo"
+        />
+        <span>Nexura</span>
+      </div>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a class="act" href="./index.html">Home</a></li>
+        <li><a href="./html/about.html">About</a></li>
+        <li><a href="./html/project.html">Projects</a></li>
+        <li><a href="./html/team.html">Team</a></li>
+        <li><a href="./html/contact.html">Contact</a></li>
+      </ul>
+
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+
+    <script>
+      const hamburger = document.getElementById("hamburger");
+      const navLinks = document.getElementById("nav-links");
+
+      hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+    </script>
+
+    <section class="container">
+      <!-- Video Section -->
+      <div class="video-container">
+        <video autoplay muted loop>
+          <source
+            src="./public/LOGO blue.mp4"
+            type="video/mp4"
+          />
+        </video>
+      </div>
+
+      <div class="content">
+        <h1>Welcome to Nexura!</h1>
+        <p>
+          Nexura is the official club of the Automobile Engineering Department
+          at UIT-RGPV, Bhopal. We are a hub of innovation, creativity, and
+          technology, with five departments specializing in design, animation,
+          simulation, web development, and management. Join us to learn, create,
+          and lead as we shape the future of engineering and design!
+        </p>
+        <a href="./html/contact.html" class="btn">Join Us</a>
+      </div>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nexura UI/UX Portfolio</title>
+    <link rel="stylesheet" href="../CSS/about.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <img
+          src="../public/logoimg.jpg"
+          alt="Nexura Logo"
+        />
+        <span>Nexura</span>
+      </div>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a class="act" href="./about.html">About</a></li>
+        <li><a href="./project.html">Projects</a></li>
+        <li><a href="./team.html">Team</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+      </ul>
+
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+
+    <script>
+      const hamburger = document.getElementById("hamburger");
+      const navLinks = document.getElementById("nav-links");
+
+      hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+    </script>
+    <main>
+      <section class="hero">
+        <h1>Welcome to Nexura's 3D Animation and Modelling Department:</h1>
+        <p>
+          The 3D Animation Department is a creative hub where art meets
+          technology to bring imagination to life. Specializing in the creation
+          of stunning visuals, lifelike characters, and immersive worlds, this
+          department plays a vital role in industries such as entertainment,
+          gaming, advertising, education, and beyond
+        </p>
+        <p>
+          Equipped with cutting-edge tools and software, the department fosters
+          innovation and technical excellence. Students and professionals here
+          master skills like 3D modeling, rigging, texturing, lighting,
+          animation, and rendering while gaining hands-on experience in crafting
+          compelling stories and realistic simulations
+        </p>
+        <p>
+          Driven by creativity and precision, the 3D Animation Department
+          bridges artistic vision and technical expertise, producing work that
+          captivates audiences and pushes the boundaries of visual storytelling.
+        </p>
+        <a href="./projects.html" class="explore-btn"
+          >Explore Our Work &rarr;</a
+        >
+      </section>
+    </main>
+  </body>
+</html>

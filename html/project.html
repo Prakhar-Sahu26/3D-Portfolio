@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D website</title>
+    <!-- <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    /> -->
+    <link rel="stylesheet" href="../css/project.css" class="css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <img
+            src="../public/logoimg.jpg"
+            alt="Nexura Logo"
+          />
+          <span>Nexura</span>
+        </div>
+
+        <ul class="nav-links" id="nav-links">
+          <li><a class="act" href="../index.html">Home</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./html/project.html">Projects</a></li>
+          <li><a href="./team.html">Team</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+        </ul>
+
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+    </header>
+
+    <section>
+      <div class="content">
+        <p>
+          The Projects Section showcases our team's creativity and innovation
+          through a collection of impactful and visually engaging projects. Each
+          project card highlights the key work we've done, offering a brief
+          description, relevant images, and a call-to-action to explore more.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="slider" id="sliderExample">
+        <div class="slider-inner">
+          <div class="slider-item active">
+            <video autoplay muted loop>
+              <source src="../public/project5.mp4" type="video/mp4" />
+            </video>
+            <div class="slider-caption">
+              <h5>First Slide Label</h5>
+              <p>
+                Some representative placeholder content for the first slide.
+              </p>
+            </div>
+          </div>
+          <div class="slider-item">
+            <video autoplay muted loop>
+              <source src="../public/project1.mp4" type="video/mp4" />
+                    
+            </video>
+            <div class="slider-caption">
+              <h5>Second Slide Label</h5>
+              <p>
+                Some representative placeholder content for the second slide.
+              </p>
+            </div>
+          </div>
+          <div class="slider-item">
+            <video autoplay muted loop>
+              <source src="../public/project3.mp4" type="video/mp4" />
+            </video>
+            <div class="slider-caption">
+              <h5>Third Slide Label</h5>
+              <p>
+                Some representative placeholder content for the third slide.
+              </p>
+            </div>
+          </div>
+
+          <div class="slider-item">
+            <video autoplay muted loop>
+              <source src="../public/project4.mp4" type="video/mp4" />
+            </video>
+            <div class="slider-caption">
+              <h5>Third Slide Label</h5>
+              <p>
+                Some representative placeholder content for the third slide.
+              </p>
+            </div>
+          </div>
+
+          <div class="slider-item">
+            <video autoplay muted loop>
+              <source src="../public/project2.mp4" type="video/mp4" />
+            </video>
+            <div class="slider-caption">
+              <h5>Third Slide Label</h5>
+              <p>
+                Some representative placeholder content for the third slide.
+              </p>
+            </div>
+          </div>
+        </div>
+        <button class="slider-control slider-control-prev" id="prevButton">
+          &#10094;
+        </button>
+        <button class="slider-control slider-control-next" id="nextButton">
+          &#10095;
+        </button>
+        <div class="slider-indicators">
+          <button class="active" data-slide-to="0"></button>
+          <button data-slide-to="1"></button>
+          <button data-slide-to="2"></button>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const slider = document.getElementById("sliderExample");
+      const inner = slider.querySelector(".slider-inner");
+      const items = slider.querySelectorAll(".slider-item");
+      const indicators = slider.querySelectorAll(".slider-indicators button");
+      let currentIndex = 0;
+
+      function updateslider() {
+        inner.style.transform = `translateX(-${currentIndex * 100}%)`;
+        indicators.forEach((indicator, index) => {
+          indicator.classList.toggle("active", index === currentIndex);
+        });
+      }
+
+      document.getElementById("prevButton").addEventListener("click", () => {
+        currentIndex = currentIndex > 0 ? currentIndex - 1 : items.length - 1;
+        updateslider();
+      });
+
+      document.getElementById("nextButton").addEventListener("click", () => {
+        currentIndex = currentIndex < items.length - 1 ? currentIndex + 1 : 0;
+        updateslider();
+      });
+
+      indicators.forEach((indicator, index) => {
+        indicator.addEventListener("click", () => {
+          currentIndex = index;
+          updateslider();
+        });
+      });
+    </script>
+  </body>
+</html>

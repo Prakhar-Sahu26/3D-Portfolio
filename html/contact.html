@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Page</title>
+    <link rel="stylesheet" href="../CSS/contact.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    
+    <nav class="navbar">
+        <div class="logo">
+            <img src="../public/logoimg.jpg" alt="Nexura Logo" />
+            <span>Nexura</span>
+        </div>
+
+    
+        <ul class="nav-links" id="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./project.html">Projects</a></li>
+            <li><a href="./team.html">Team</a></li>
+            <li><a class="act" href="./contact.html">Contact</a></li>
+        </ul>
+
+        
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+
+    <main>
+        <section class="contact-container">
+            <div class="contact-details">
+                <h1>Contact us</h1>
+                <p>We're excited to hear from you and connect!</p>
+                <div class="inquiries">
+                    <h3>Inquires:</h3>
+                    <p>nexurargpv@gmail.com</p>
+                </div>
+                <div class="team-contacts">
+                    <p>Soumya Shrivastava - 9630012262</p>
+                    <p>Pawan Soni - 7477098233</p>
+                    <p>Vishal Singh Thakur - 96912 06265</p>
+                    <p>Rishabh Singh - 7440723227</p>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <h2>Get In Touch</h2>
+                <p>You can reach us anytime</p>
+                <form id="contactForm">
+                    <div class="form-row">
+                        <input type="text" id="firstName" placeholder="First name" required>
+                        <input type="text" id="lastName" placeholder="Last name" required>
+                    </div>
+                    <input type="email" id="email" placeholder="Your Email" required>
+                    <div class="form-row">
+                        <select id="countryCode">
+                            <option value="+91">+91</option>
+                        </select>
+                        <input type="tel" id="phoneNumber" placeholder="Phone number" required>
+                    </div>
+                    <textarea id="message" rows="5" placeholder="How can we help?" required></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+
+                <div id="responseMessage"
+                    style="display: none; margin-top: 20px; padding: 10px; background-color: #e0ffe0; border: 1px solid #a0d0a0; color: #4a7c4a; font-weight: bold;">
+                </div>
+            </div>
+
+            </div>
+
+
+        </section>
+    </main>
+</body>
+
+</html>
