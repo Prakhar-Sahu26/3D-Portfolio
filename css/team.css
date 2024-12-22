@@ -9,66 +9,96 @@ body
     color: #FFFF;
 }
 
+
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: black;
-    color: white;
-    padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+}
+.act{
+  color: #e58900;
 }
 
 .logo {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .logo img {
-    height: 30px;
-    margin-right: 10px;
+  height: 30px;
+  margin-right: 10px;
 }
 
 .logo span {
-    font-size: 1.2rem;
-    font-weight: bold;
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
 .nav-links {
-    display: flex;
-    list-style: none;
+  display: flex;
+  list-style: none;
 }
 
 .nav-links li {
-    margin: 0 15px;
+  margin: 0 15px;
 }
 
 .nav-links a {
-    text-decoration: none;
-    color: white;
-    font-size: 1rem;
-    transition: color 0.3s ease;
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: purple;
+  color: purple;
 }
 
 
 .hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
 }
 
 .hamburger span {
-    background-color: white;
-    width: 25px;
-    height: 3px;
-    margin: 3px 0;
-    transition: all 0.3s ease;
+  background-color: white;
+  width: 25px;
+  height: 3px;
+  margin: 3px 0;
+  transition: all 0.3s ease;
 }
 
 
+@media screen and (max-width: 768px) {
+ 
+  .hamburger {
+      display: flex;
+  }
+
+ 
+  .nav-links {
+      display: none;
+      flex-direction: column;
+      background-color: black;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+  }
+
+  .nav-links.active {
+      display: flex;
+  }
+
+  .nav-links li {
+      margin: 10px 0;
+      text-align: center;
+  }
+}
 
 .team-section {
     text-align: center;
@@ -86,6 +116,7 @@ body
   
   .team-cards {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 2rem;
   }

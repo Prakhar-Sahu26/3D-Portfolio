@@ -7,32 +7,38 @@
     <link rel="stylesheet" href="../css/team.css" class="css" />
   </head>
   <body>
-    <header>
       <nav class="navbar">
         <div class="logo">
           <img
-            src="../public/logoimg.jpg"
+            src="./public/logoimg.jpg"
             alt="Nexura Logo"
           />
           <span>Nexura</span>
         </div>
-
+  
         <ul class="nav-links" id="nav-links">
-          <li><a class="act" href="../index.html">Home</a></li>
+          <li><a class="act" href="./index.html">Home</a></li>
           <li><a href="./html/about.html">About</a></li>
-          <li><a href="./project.html">Projects</a></li>
+          <li><a href="./html/project.html">Projects</a></li>
           <li><a href="./html/team.html">Team</a></li>
-          <li><a href="./contact.html">Contact</a></li>
+          <li><a href="./html/contact.html">Contact</a></li>
         </ul>
-
+  
         <div class="hamburger" id="hamburger">
           <span></span>
           <span></span>
           <span></span>
         </div>
       </nav>
-    </header>
-
+  
+      <script>
+        const hamburger = document.getElementById("hamburger");
+        const navLinks = document.getElementById("nav-links");
+  
+        hamburger.addEventListener("click", () => {
+          navLinks.classList.toggle("active");
+        });
+      </script>
     <section class="team-section">
       <h1>The talented individuals behind our project</h1>
       <p>Showcasing their skills, roles, and passion for innovation.</p>
