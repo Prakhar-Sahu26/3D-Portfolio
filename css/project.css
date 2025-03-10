@@ -1,24 +1,43 @@
-*{
-    padding: 0;
+/* Importing Beautiful Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;600&display=swap');
+
+* {
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
-}
-body 
-{
-    background-color: #271540;
-    color: #FFFF;
+    font-family: 'Playfair Display', serif;
 }
 
+body {
+    line-height: 1.6;
+    background-color: #1e0a32;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Navbar Styling */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: black;
-    color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
     padding: 10px 20px;
+    background: linear-gradient(135deg, #2a0d49, #4e1e75);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
 }
-.act{
-    color: #e58900;
+
+.navbar.scrolled {
+    background: #2a0d49;
+}
+
+.act {
+    color: #ffcc00;
+    font-weight: 700;
 }
 
 .logo {
@@ -27,13 +46,14 @@ body
 }
 
 .logo img {
-    height: 30px;
-    margin-right: 10px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
 }
 
-.logo span {
-    font-size: 1.2rem;
-    font-weight: bold;
+.logo img:hover {
+    transform: scale(1.1);
 }
 
 .nav-links {
@@ -48,14 +68,15 @@ body
 .nav-links a {
     text-decoration: none;
     color: white;
-    font-size: 1rem;
-    transition: color 0.3s ease;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: purple;
+    color: #ffcc00;
+    letter-spacing: 1.2px;
 }
-
 
 .hamburger {
     display: none;
@@ -65,28 +86,27 @@ body
 
 .hamburger span {
     background-color: white;
-    width: 25px;
+    width: 30px;
     height: 3px;
-    margin: 3px 0;
+    margin: 5px 0;
     transition: all 0.3s ease;
 }
 
-
 @media screen and (max-width: 768px) {
-   
     .hamburger {
         display: flex;
     }
 
-   
     .nav-links {
         display: none;
         flex-direction: column;
-        background-color: black;
+        background: linear-gradient(135deg, #2a0d49, #4e1e75);
         position: absolute;
         top: 60px;
         left: 0;
         width: 100%;
+        padding: 15px 0;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
     }
 
     .nav-links.active {
@@ -94,29 +114,21 @@ body
     }
 
     .nav-links li {
-        margin: 10px 0;
+        margin: 12px 0;
         text-align: center;
     }
 }
-.content
-{
-    padding-top: 5vw;
-    max-width: 1300px;
-    font-size: 1.25rem;
-    margin: 0 auto;
-    font-weight: 400;
-    text-align: center;
-    /* line-height: 2vw; */
-    /* max-height: 90px; */
-}
 
+/* Video Slider Styling */
 .slider {
     position: relative;
-    /* width: 100%; */
-    max-width: 800px;
-    margin: auto;
+    width: 80%;
+    height: 90vh;
+    margin: 80px auto 0;
     overflow: hidden;
-    padding-top: 6.5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .slider-inner {
@@ -126,59 +138,36 @@ body
 
 .slider-item {
     min-width: 100%;
-    position: relative;
-}
-
-.slider-item img {
-    width: 100%;
-    display: block;
-}
-
-.slider-caption {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    /* background: rgba(0, 0, 0, 0.5); */
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    text-align: center;
-}
-
-.slider-indicators {
     display: flex;
     justify-content: center;
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
+    align-items: center;
 }
 
-.slider-indicators button {
-    width: 10px;
-    height: 10px;
-    margin: 0 5px;
-    border: none;
-    border-radius: 50%;
-    background: gray;
-    cursor: pointer;
+.slider-item video {
+    width: 80%;
+    height: auto;
+    max-height: 80vh;
+    border-radius: 12px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
 }
 
-.slider-indicators .active {
-    background: white;
-}
-
+/* Arrow Controls */
 .slider-control {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(255, 255, 255, 0.2);
     color: white;
     border: none;
-    padding: 10px;
+    padding: 15px;
     cursor: pointer;
-    z-index: 10;
+    font-size: 24px;
+    border-radius: 50%;
+    transition: background 0.3s ease;
+}
+
+.slider-control:hover {
+    background: rgba(255, 255, 255, 0.5);
 }
 
 .slider-control-prev {
@@ -189,8 +178,14 @@ body
     right: 10px;
 }
 
-.slider video
-{
-    height: 80vh ;
-    width: 50vw;
+/* Responsiveness */
+@media (max-width: 768px) {
+    .slider {
+        width: 100%;
+        height: 70vh;
+    }
+
+    .slider-item video {
+        width: 90%;
+    }
 }

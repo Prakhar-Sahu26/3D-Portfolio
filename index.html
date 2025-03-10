@@ -5,16 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nexura Club</title>
     <link rel="stylesheet" href="./css/home.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   </head>
 
   <body>
     <nav class="navbar">
       <div class="logo">
-        <img
-          src="./public/logoimg.jpg"
-          alt="Nexura Logo"
-        />
-        <span>Nexura</span>
+        <img src="./public/logoimg.jpg" alt="Nexura Logo" class="round-logo" />
       </div>
 
       <ul class="nav-links" id="nav-links">
@@ -32,37 +29,35 @@
       </div>
     </nav>
 
-    <script>
-      const hamburger = document.getElementById("hamburger");
-      const navLinks = document.getElementById("nav-links");
-
-      hamburger.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
-      });
-    </script>
-
     <section class="container">
-      <!-- Video Section -->
       <div class="video-container">
+        <div class="overlay"></div>
         <video autoplay muted loop>
-          <source
-            src="./public/LOGO blue.mp4"
-            type="video/mp4"
-          />
+          <source src="./public/LOGO blue.mp4" type="video/mp4" />
         </video>
       </div>
 
       <div class="content">
         <h1>Welcome to Nexura!</h1>
         <p>
-          Nexura is the official club of the Automobile Engineering Department
-          at UIT-RGPV, Bhopal. We are a hub of innovation, creativity, and
-          technology, with five departments specializing in design, animation,
-          simulation, web development, and management. Join us to learn, create,
-          and lead as we shape the future of engineering and design!
+          Nexura isn’t just a club—it’s a love affair between passion and innovation. We don’t just build, we breathe life into ideas, making technology swoon at our touch.We craft designs that turn heads, animations that steal hearts, and simulations that leave you wanting more. Web development? Oh, we make the internet blush. Management? Let’s just say, we know how to take control. So, if you’re ready for something thrilling, something that keeps you up at night dreaming, you’re already halfway ours.
         </p>
         <a href="./html/contact.html" class="btn">Join Us</a>
       </div>
     </section>
+
+    <script>
+      const hamburger = document.getElementById("hamburger");
+      const navLinks = document.getElementById("nav-links");
+
+      hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+        hamburger.classList.toggle("open");
+      });
+
+      gsap.from(".navbar", { opacity: 0, y: -50, duration: 1, ease: "power3.out" });
+      gsap.from(".video-container", { opacity: 0, scale: 0.9, duration: 1.2, ease: "power3.out" });
+      gsap.from(".content", { opacity: 0, x: 50, duration: 1.2, ease: "power3.out", delay: 0.5 });
+    </script>
   </body>
 </html>

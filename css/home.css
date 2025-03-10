@@ -1,28 +1,42 @@
-
+/* Importing Beautiful Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;600&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Playfair Display', serif;
 }
-body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      background-color: #271540; 
-      color: white;
-    }
 
+body {
+    line-height: 1.6;
+    background-color: #1e0a32;
+    color: white;
+}
+
+/* Navbar Styling */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: black;
-    color: white;
-    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 15px 30px;
+    background: linear-gradient(135deg, #2a0d49, #4e1e75);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
 }
-.act{
-    color: #e58900;
+
+.navbar.scrolled {
+    background: #2a0d49;
+}
+
+.act {
+    color: #ffcc00;
+    font-weight: 700;
 }
 
 .logo {
@@ -31,13 +45,14 @@ body {
 }
 
 .logo img {
-    height: 30px;
-    margin-right: 10px;
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
 }
 
-.logo span {
-    font-size: 1.2rem;
-    font-weight: bold;
+.logo img:hover {
+    transform: scale(1.1);
 }
 
 .nav-links {
@@ -46,20 +61,21 @@ body {
 }
 
 .nav-links li {
-    margin: 0 15px;
+    margin: 0 20px;
 }
 
 .nav-links a {
     text-decoration: none;
     color: white;
-    font-size: 1rem;
-    transition: color 0.3s ease;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: purple;
+    color: #ffcc00;
+    letter-spacing: 1.2px;
 }
-
 
 .hamburger {
     display: none;
@@ -69,28 +85,27 @@ body {
 
 .hamburger span {
     background-color: white;
-    width: 25px;
+    width: 30px;
     height: 3px;
-    margin: 3px 0;
+    margin: 5px 0;
     transition: all 0.3s ease;
 }
 
-
 @media screen and (max-width: 768px) {
-   
     .hamburger {
         display: flex;
     }
 
-   
     .nav-links {
         display: none;
         flex-direction: column;
-        background-color: black;
+        background: linear-gradient(135deg, #2a0d49, #4e1e75);
         position: absolute;
         top: 60px;
         left: 0;
         width: 100%;
+        padding: 15px 0;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
     }
 
     .nav-links.active {
@@ -98,78 +113,88 @@ body {
     }
 
     .nav-links li {
-        margin: 10px 0;
+        margin: 12px 0;
         text-align: center;
     }
 }
 
+/* Hero Section Styling */
+.container {
+    display: flex;
+    margin-top: 7rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    text-align: center;
+}
 
-   
+.video-container {
+    flex: 1;
+    min-width: 320px;
+    margin-right: 30px;
+}
+
+.video-container video {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+.content {
+    flex: 1;
+    min-width: 320px;
+    text-align: center;
+    font-size: larger;
+}
+
+.content h1 {
+    font-size: 2.8em;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 30px;
+    font-weight: 700;
+    color: rgb(145, 5, 5);
+    text-align: center;
+}
+
+.content p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.6;
+    color: #e0c3fc;
+    margin-bottom: 25px;
+}
+
+/* Button Styling */
+.btn {
+    display: inline-block;
+    text-align: center;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #ff6600, #cc3300);
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 35px;
+    text-decoration: none;
+    cursor: pointer;
+    margin-top: 25px;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: linear-gradient(135deg, #cc3300, #992600);
+    transform: scale(1.07);
+}
+
+@media (max-width: 768px) {
     .container {
-      display: flex;
-     margin-top: 4rem;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      padding: 20px;
+        flex-direction: column;
+        text-align: center;
     }
 
     .video-container {
-      flex: 1;
-      min-width: 300px; 
-      margin-right: 20px;
+        margin-bottom: 25px;
     }
-
-    .video-container video {
-      width: 100%;
-      border-radius: 10px; 
-    }
-
-    .content {
-      flex: 1;
-      min-width: 300px;
-      text-align: left;
-      font-size: larger;
-    }
-
-    .content h1 {
-      font-size: 2.5em;
-      margin-bottom: 45px;
-    }
-
-    .content p {
-      margin-bottom: 20px;
-    }
-
-    /* Button Styling */
-    .btn {
-      display: inline-block;
-      text-align: center;
-      padding: 10px 20px;
-      background-color: #ff9f00;
-      width: 8rem;
-      color: white;
-      font-weight: bold;
-      border: none;
-      border-radius: 25px;
-      text-decoration: none;
-      cursor: pointer;
-      margin-top: 20px;
-      transition: background-color 0.3s ease;
-    }
-
-    .btn:hover {
-      background-color: #e58900;
-    }
-
-   
-    @media (max-width: 768px) {
-      .container {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .video-container {
-        margin-bottom: 20px;
-      }
-    }
+}

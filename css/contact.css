@@ -1,32 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;600&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Playfair Display', serif;
 }
 
 body {
-    background-color: #271540;
-    color: #fff;
     line-height: 1.6;
+    background-color: #1e0a32;
+    color: white;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
+/* Navbar Styling */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: black;
-    color: white;
-    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 15px 30px;
+    background: linear-gradient(135deg, #2a0d49, #4e1e75);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
 }
-.act{
-    color: #e58900;
+
+.navbar.scrolled {
+    background: #2a0d49;
+}
+
+.act {
+    color: #ffcc00;
+    font-weight: 700;
 }
 
 .logo {
@@ -35,13 +44,14 @@ a {
 }
 
 .logo img {
-    height: 30px;
-    margin-right: 10px;
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
 }
 
-.logo span {
-    font-size: 1.2rem;
-    font-weight: bold;
+.logo img:hover {
+    transform: scale(1.1);
 }
 
 .nav-links {
@@ -50,18 +60,20 @@ a {
 }
 
 .nav-links li {
-    margin: 0 15px;
+    margin: 0 20px;
 }
 
 .nav-links a {
     text-decoration: none;
     color: white;
-    font-size: 1rem;
-    transition: color 0.3s ease;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: purple;
+    color: #ffcc00;
+    letter-spacing: 1.2px;
 }
 
 .hamburger {
@@ -72,14 +84,13 @@ a {
 
 .hamburger span {
     background-color: white;
-    width: 25px;
+    width: 30px;
     height: 3px;
-    margin: 3px 0;
+    margin: 5px 0;
     transition: all 0.3s ease;
 }
 
 @media screen and (max-width: 768px) {
-   
     .hamburger {
         display: flex;
     }
@@ -87,11 +98,13 @@ a {
     .nav-links {
         display: none;
         flex-direction: column;
-        background-color: black;
+        background: linear-gradient(135deg, #2a0d49, #4e1e75);
         position: absolute;
         top: 60px;
         left: 0;
         width: 100%;
+        padding: 15px 0;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
     }
 
     .nav-links.active {
@@ -99,66 +112,101 @@ a {
     }
 
     .nav-links li {
-        margin: 10px 0;
+        margin: 12px 0;
         text-align: center;
     }
 }
+
+/* Team Cards */
+.team-section {
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.team-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.team-section p {
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    color: #dcdcdc;
+}
+
+.team-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.card {
+    background: linear-gradient(135deg, #3a0ca3, #7209b7);
+    border-radius: 15px;
+    padding: 1.5rem;
+    width: 250px;
+    height: 400px;
+    text-align: center;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+}
+
+.card-info h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+    font-weight: 600;
+}
+
+.card-info p {
+    font-size: 1rem;
+    color: #f8cdda;
+}
+
+/* Contact Section */
 .contact-container {
     display: flex;
     justify-content: center;
     align-items: flex-start;
     gap: 50px;
-    padding: 40px 10%;
+    padding: 60px 10%;
     flex-wrap: wrap;
 }
 
-.contact-details {
-    flex: 1;
-    min-width: 300px;
-    font-size: larger;
-    margin-top: 50px;
-}
-
-.contact-details h1 {
-    color: #f90;
-    font-size: 2.7rem;
-    margin-bottom: 40px;
-}
-
-.contact-details p,
-.inquiries p {
-    margin: 10px 0;
-    font-size: larger
-}
-
-.contact-details h3 {
-    margin-top: 50px;
-    font-size: 1.2rem;
-    font-weight: bold;
-}
-
-.team-contacts p {
-    margin-top: 5px;
-    font-size: 1.1rem;
-}
-
 .contact-form {
-    background: #fff;
-    color: #000;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    color: #fff;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.1);
     flex: 1;
-    min-width: 300px;
+    min-width: 350px;
 }
 
 .contact-form h2 {
-    font-size: 1.8rem;
-}
-
-.contact-form p {
+    font-size: 2rem;
+    font-weight: bold;
     margin-bottom: 15px;
-    font-size: 0.95rem;
+    font-family: 'Playfair Display', serif;
 }
 
 form input,
@@ -166,61 +214,43 @@ form select,
 form textarea,
 form button {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     margin-bottom: 15px;
-    border: 1px solid purple;
-    border-radius: 5px;
-    font-size: 1rem;
+    border: 2px solid #8a2be2;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    transition: all 0.3s ease;
 }
 
-.form-row {
-    display: flex;
-    gap: 10px;
-}
-
-form select {
-    flex: 0 0 80px;
-}
-
-form textarea {
-    resize: none;
+form input:focus,
+form textarea:focus {
+    background: rgba(255, 255, 255, 0.3);
+    outline: none;
 }
 
 form button {
-    background-color: #f90;
+    background: linear-gradient(135deg, #ff9800, #ffcc00);
     color: #fff;
-    font-size: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
     border: none;
-    border-radius: 25px;
+    border-radius: 30px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: all 0.3s;
 }
 
 form button:hover {
-    background-color: #e58000;
+    background: linear-gradient(135deg, #ff8500, #e6b800);
+    transform: scale(1.05);
 }
 
 @media (max-width: 768px) {
     .contact-container {
         flex-direction: column;
     }
-
-    .form-row {
-        flex-direction: column;
-    }
 }
-
-@media (max-width: 480px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    nav ul {
-        margin-top: 10px;
-    }
-
-    .contact-details h1 {
-        font-size: 2rem;
-    }
+body {
+    padding-top: 80px; /* Adjust this value based on your navbar height */
 }

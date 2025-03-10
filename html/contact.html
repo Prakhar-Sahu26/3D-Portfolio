@@ -35,7 +35,29 @@
     </nav>
 
     <script>
-        const hamburger = document.getElementById('hamburger');
+        document.querySelector("#contactForm").addEventListener("submit", async (e) => {
+            e.preventDefault();
+            
+            const firstName = document.querySelector("#firstName").value;
+            const lastName = document.querySelector("#lastName").value;
+            const email = document.querySelector("#email").value;
+            const countryCode = document.querySelector("#countryCode").value;
+            const phoneNumber = document.querySelector("#phoneNumber").value;
+            const message = document.querySelector("#message").value;
+        
+            const fullName = `${firstName} ${lastName}`;
+            const fullPhone = `${countryCode} ${phoneNumber}`;
+        
+            const response = await fetch("http://localhost:5000/send", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ name: fullName, email, phone: fullPhone, message }),
+            });
+        
+            const data = await response.json();
+            alert(data.message);
+        });        
+const hamburger = document.getElementById('hamburger');
         const navLinks = document.getElementById('nav-links');
 
         hamburger.addEventListener('click', () => {

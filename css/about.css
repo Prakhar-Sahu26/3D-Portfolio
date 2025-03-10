@@ -1,68 +1,43 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Merriweather:wght@300;700&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
 }
-
 
 body {
     background-color: #271540;
     color: white;
-    line-height: 1.6;
+    line-height: 1.8;
+    font-family: 'Merriweather', serif;
 }
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-    background-color: black;
-}
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      background-color: #2d0b44; 
-      color: white;
-    }
-
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: black;
+    background: linear-gradient(135deg, #1e1e2f, #3a1d63);
     color: white;
-    padding: 10px 20px;
+    padding: 15px 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    font-family: 'Quicksand', sans-serif;
 }
-.act{
-    color: #e58900;
-}
-
 
 .logo {
     display: flex;
     align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 50%;
+    overflow: hidden;
 }
 
 .logo img {
-    height: 30px;
+    height: 40px;
     margin-right: 10px;
+    border-radius: 50%;
 }
-
-.logo span {
-    font-size: 1.2rem;
-    font-weight: bold;
-}
-
 
 .nav-links {
     display: flex;
@@ -70,20 +45,25 @@ body {
 }
 
 .nav-links li {
-    margin: 0 15px;
+    margin: 0 20px;
 }
 
 .nav-links a {
     text-decoration: none;
     color: white;
     font-size: 1rem;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.2s ease;
 }
 
 .nav-links a:hover {
-    color: purple;
+    color: #ff9f00;
+    transform: scale(1.1);
 }
 
+.act {
+    color: #e58900;
+    font-weight: bold;
+}
 
 .hamburger {
     display: none;
@@ -93,40 +73,34 @@ body {
 
 .hamburger span {
     background-color: white;
-    width: 25px;
+    width: 30px;
     height: 3px;
-    margin: 3px 0;
+    margin: 4px 0;
     transition: all 0.3s ease;
 }
 
-
 @media screen and (max-width: 768px) {
-   
     .hamburger {
         display: flex;
     }
-
-   
     .nav-links {
         display: none;
         flex-direction: column;
-        background-color: black;
+        background-color: rgba(0, 0, 0, 0.9);
         position: absolute;
         top: 60px;
         left: 0;
         width: 100%;
+        text-align: center;
+        padding: 10px 0;
     }
-
     .nav-links.active {
         display: flex;
     }
-
     .nav-links li {
-        margin: 10px 0;
-        text-align: center;
+        margin: 15px 0;
     }
 }
-
 
 main {
     display: flex;
@@ -136,13 +110,15 @@ main {
     min-height: 85vh;
     padding: 0 30px;
 }
-.hero{
+
+.hero {
     justify-content: center;
 }
 
 .hero h1 {
-    font-size: 2rem;
-    margin-bottom: 15px;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
 }
 
 .hero span {
@@ -155,51 +131,42 @@ main {
     margin: auto;
     margin-bottom: 25px;
     max-width: 850px;
+    opacity: 0.9;
+    letter-spacing: 0.5px;
+    font-family: 'Quicksand', sans-serif;
 }
 
 .explore-btn {
-    margin-top: 20px;
-    background-color: #ff8c00;
+    display: block;
+    margin: 20px auto;
+    background: linear-gradient(135deg, #ff8c00, #e07c00);
     text-decoration: none;
     color: white;
-    padding: 10px 20px;
+    padding: 12px 25px;
     font-size: 1rem;
+    font-weight: bold;
     border: none;
-    border-radius: 25px;
+    border-radius: 30px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: transform 0.3s, background 0.3s;
 }
 
 .explore-btn:hover {
-    background-color: #e07c00;
+    background: linear-gradient(135deg, #e07c00, #c76a00);
+    transform: scale(1.05);
+    box-shadow: 0px 5px 15px rgba(255, 140, 0, 0.5);
 }
 
 @media (max-width: 768px) {
-    header {
-        flex-direction: column;
-    }
-
-    nav ul {
-        margin-top: 10px;
-        flex-direction: column;
-        text-align: center;
-    }
-
-    nav ul li {
-        margin: 10px 0;
-    }
-
     .hero h1 {
         font-size: 2rem;
     }
-
     .hero p {
         font-size: 1rem;
         margin: 0;
         margin-bottom: 20px;
         text-align: center;
     }
-
     .explore-btn {
         font-size: 0.9rem;
     }
